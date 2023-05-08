@@ -9,14 +9,14 @@
 
 int static_calc() 
 {
-    static int num = 0;
+    static int num = 0; /* initialized once throughtout the program */
     num++;
     return (num);
 }
 
 int calc()
 {
-    int num = 0;
+    int num = 0; /* initialized every time the function is called */
     num++;
     return (num);
 }
