@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 
-
 /*
  * strindex - checks if a substring in present in a given string
  * @str: given string
