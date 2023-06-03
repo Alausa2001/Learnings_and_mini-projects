@@ -12,6 +12,7 @@ int main(void)
   bool continu = true;
   char *arr[] = {"glinty", "Wakanda", "ethereal", "Maxine", "Mugwump", "Strive"};
   char a, b; /* user chars to fill in */
+  char *answer;
 
   while (continu)
   {
@@ -29,11 +30,15 @@ int main(void)
     printf("%s\n", dashed);
     printf("Enter the missing characters, For example in W_t_r the missing characters are 'a' and 'e'\n");
     scanf("%c %c", &a, &b);
-    dashed = fill(dashed, a, b);
-    if (strcmp(dashed, arr[rand_idx]) == 0)
+    answer = fill(dashed, a, b);
+    if (strcmp(answer, arr[rand_idx]) == 0)
     {
-      printf("Correct!\n The word is %s\n", arr[rand_idx]);
+      printf("Correct!\nThe word is %s\n", arr[rand_idx]);
     }
+    else
+      printf("Incorrect\n");
   }
+  free(dashed);
+  free(answer);
   return 0;
 }
