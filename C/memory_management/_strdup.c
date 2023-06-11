@@ -16,6 +16,8 @@ char *_strdup(char *str)
     int i;
 
     dup = (char*)malloc(sizeof(char) * size);
+    if (!dup)
+        return NULL;
     for(i = 0; i < size; i++)
     {
         dup[i] = str[i];
@@ -32,7 +34,7 @@ int main(void)
 {
     char *s;
 
-    s = _strdup("ALX SE");
+    s = _strdup("ALX SOFTWARE ENGINEERING");
     if (s == NULL)
     {
         printf("failed to allocate memory\n");
