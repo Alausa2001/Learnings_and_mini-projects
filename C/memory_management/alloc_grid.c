@@ -1,6 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
+
+void free_grid(int **grid, int height)
+{
+    int i;
+
+    for(i = 0; i < height; i++)
+        free(grid[i]);
+    free(grid);
+}
 /**
  * @brief -  function that returns a pointer to a 2 dimensional array of integers
  * 
@@ -20,11 +30,14 @@ int **alloc_grid(int width, int height)
     if(!grid)
         return NULL;
 
-    for(i = 0; i < width; i++)
+    for(i = 0; i < height; i++)
     {
         grid[i] = (int*)malloc(width * sizeof(int));
         if (!grid[i])
+        {
+          free_grid(grid, i);
           return NULL;
+        }
     }
 
     for(i = 0; i < height; i++)
@@ -78,5 +91,6 @@ int main(void)
     grid[0][3] = 98;
     grid[3][4] = 402;
     print_grid(grid, 6, 4);
+
     return (0);
 }
