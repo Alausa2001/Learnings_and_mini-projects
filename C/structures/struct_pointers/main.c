@@ -12,6 +12,5 @@ int main(void)
 		printf("Next year, %s would be %d\n", bola.name, bola.age);
 
     new = createPerson("Bayo", 19);
-    printf("\nHi Bola, my name is %s and I am %d years old and I promise to be Bayo-side\n", new->name, new->age);
-	
+    printf("\nHi Bola, my name is %s and I am %d years old and I promise to be Bayo-side\n", new->name, new->age);	
 }
