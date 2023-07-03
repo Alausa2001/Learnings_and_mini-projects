@@ -10,5 +10,6 @@ typedef struct person {
 } person_t;
 
 void updateAge(person_t *ptr, int age);
+person_t *createPerson(char *name, int age);
 
 #endif
